@@ -17,5 +17,9 @@ public class Main {
 
         System.out.println(onlineWorker.calculatePlusHours(20));
         System.out.println(onsiteWorker.calculateNightHours(30));
+
+        //Level 2, application of obsolete methods (deprecated)
+        onlineWorker.oldOnlineMethod();
+        onsiteWorker.oldOnSiteMethod();
     }
 }

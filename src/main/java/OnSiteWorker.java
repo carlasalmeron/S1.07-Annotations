@@ -7,7 +7,7 @@ public class OnSiteWorker extends Worker {
     }
 
     @Override
-    public double calculateSalary (double workedHours) {
+    public double calculateSalary(double workedHours) {
         return super.calculateSalary(workedHours) + fuel;
     }
 
@@ -16,5 +16,8 @@ public class OnSiteWorker extends Worker {
         return 0;
     }
 
-
+    @Deprecated
+    public void oldOnSiteMethod() {
+        System.out.println("This is an old on-site method.");
+    }
 }

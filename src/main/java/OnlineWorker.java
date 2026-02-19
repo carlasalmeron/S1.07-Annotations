@@ -7,12 +7,17 @@ public class OnlineWorker extends Worker {
     }
 
     @Override
-    public double calculateSalary (double workedHours) {
+    public double calculateSalary(double workedHours) {
         return super.calculateSalary(workedHours) + INTERNET_FEE;
     }
 
     @Deprecated
     public double calculatePlusHours(double plusHour) {
         return 0;
+    }
+
+    @Deprecated
+    public void oldOnlineMethod() {
+        System.out.println("This is an old online method.");
     }
 }

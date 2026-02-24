@@ -41,9 +41,27 @@ Using an IDE (from source code without building the project):
 - Open the project with the IDE
 - Execute the main
 
-### 📂 Clone Repository
+**Clone Repository**
 
 `git clone https://github.com/carlasalmeron/S1.07-Annotations.git`
+
+**Requirements:**
+
+- Java JDK 17 or higher.
+- Maven (optional) or use your preferred IDE (IntelliJ/Eclipse).
+
+**Running the Application:**
+
+- Navigate to `src/main/java/n1exercise1`
+- Compile: `javac Main.java Worker.java OnlineWorker.java OnSiteWorker.java`
+- Run: `java Main`
+
+**Testing Annotations:**
+
+To see the deprecation warnings during compilation, use:
+
+`Bash
+javac -Xlint:deprecation Main.java`
 
 ### 🌍 Best Practices
 

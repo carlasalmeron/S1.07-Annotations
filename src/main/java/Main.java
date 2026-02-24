@@ -1,25 +1,28 @@
-@SuppressWarnings("deprecation")
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
+        List<Worker> employees = new ArrayList<>();
 
-        OnlineWorker onlineWorker = new OnlineWorker("Carla", "Salmerón", 17.00);
-        OnSiteWorker onsiteWorker = new OnSiteWorker("Ana", "Lopez", 18.00);
+        employees.add(new OnlineWorker("Carla", "Salmeron", 25.0));
+        employees.add(new OnSiteWorker("Lucas", "García", 25.0));
 
-        int monthlyHours = 150;
+        System.out.println("--- Calculating Salaries ---");
+        for (Worker worker : employees) {
+            System.out.println("Worker: " + worker.name + " " + worker.surname +
+                    " | Total Salary: " + worker.calculateSalary(160) + "€");
+        }
 
-        System.out.println(onlineWorker + ", accumulating a monthly salary of " +
-                onlineWorker.calculateSalary(monthlyHours));
+        System.out.println("\n--- Testing Deprecated Methods ---");
 
-        System.out.println(onsiteWorker + ", accumulating a monthly salary of " +
-                onsiteWorker.calculateSalary(monthlyHours));
+        OnlineWorker onlineEmployee = new OnlineWorker("Anna", "Smith", 20.0);
+        OnSiteWorker onsiteEmployee = new OnSiteWorker("Marc", "Vila", 20.0);
 
-        System.out.println();
+        onlineEmployee.oldMethod();
 
-        System.out.println(onlineWorker.calculatePlusHours(20));
-        System.out.println(onsiteWorker.calculateNightHours(30));
-
-        //Level 2, application of obsolete methods (deprecated)
-        onlineWorker.oldOnlineMethod();
-        onsiteWorker.oldOnSiteMethod();
+        double nightPay = onsiteEmployee.calculateNightHours(10);
+        System.out.println("Night hours calculation: " + nightPay + "€");
     }
 }

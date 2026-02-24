@@ -1,23 +1,18 @@
 public class OnlineWorker extends Worker {
 
-    private static final double INTERNET_FEE = 50.0;
+    private final double INTERNET_RATE = 30.0;
 
-    public OnlineWorker(String name, String surname, double priceHour) {
-        super(name, surname, priceHour);
+    public OnlineWorker(String name, String surname, double hourPrice) {
+            super(name, surname, hourPrice);
     }
 
     @Override
-    public double calculateSalary(double workedHours) {
-        return super.calculateSalary(workedHours) + INTERNET_FEE;
+    public double calculateSalary(double hoursWorked) {
+        return (hoursWorked * hourPrice) + INTERNET_RATE;
     }
 
     @Deprecated
-    public double calculatePlusHours(double plusHour) {
-        return 0;
-    }
-
-    @Deprecated
-    public void oldOnlineMethod() {
-        System.out.println("This is an old online method.");
+    public void oldMethod() {
+        System.out.println("Warning: This method is deprecated. Use the new salary calculator instead.");
     }
 }

@@ -1,32 +1,14 @@
-public class Worker {
-    private String name;
-    private String surname;
-    private double priceHour;
+public abstract class Worker {
+    protected String name;
+    protected String surname;
+    protected double hourPrice;
 
-    public Worker(String name, String surname, double priceHour) {
+    public Worker(String name, String surname, double hourPrice) {
         this.name = name;
         this.surname = surname;
-        this.priceHour = priceHour;
+        this.hourPrice = hourPrice;
     }
 
-    public String getName() {
-        return name;
-    }
+    public abstract double calculateSalary(double hoursWorked);
 
-    public String getSurname() {
-        return surname;
-    }
-
-    public double getPriceHour() {
-        return priceHour;
-    }
-
-    public double calculateSalary(double workedHours) {
-        return workedHours * priceHour;
-    }
-
-    @Override
-    public String toString () {
-        return "The employee " + name + " " + surname + " is receiving " + priceHour + " per hour worked";
-    }
 }
